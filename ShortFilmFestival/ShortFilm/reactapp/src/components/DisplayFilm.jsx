@@ -8,7 +8,7 @@ const DisplayFilm = () => {
   useEffect(() => {
     async function fetchFilms() {
       try {
-        const response = await fetch('https://8080-edffdadacccdaf326831678aababaebabeone.premiumproject.examly.io/getAllFilms', {
+        const response = await fetch('https://8080-edffdadacccdaf326831678aababaebabeone.premiumproject.examly.io/api/films', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
