@@ -3,8 +3,9 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="Footer">
-      <p>&copy; 2023 Fresh Groceries. All rights reserved.</p>
+    <footer className="footer">
+      <p>&copy; {new Date().getFullYear()} Short Film Festival. All rights reserved.</p>
+      <p>Made with 🎬 and ❤️ for film lovers everywhere.</p>
     </footer>
   );
 };
