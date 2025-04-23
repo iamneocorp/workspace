@@ -5,17 +5,14 @@ import './NavBar.css';
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1>Fresh Groceries</h1>
-      <ul className="navlinks">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/addproduct">Add Product</Link>
-        </li>
-        <li>
-          <Link to="/displayproduct">Display Product</Link>
-        </li>
+      <div className="navbar-logo">
+        🎬 Short Film Festival
+      </div>
+      <ul className="navbar-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/addfilms">AddFilms</Link></li>
+        <li><Link to="/displayfilms">DisplayFilms</Link></li>
+        
       </ul>
     </nav>
   );

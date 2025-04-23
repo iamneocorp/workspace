@@ -1,31 +1,32 @@
-/* Navbar.css */
-
 .navbar {
-    background-color: #3498db;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-  
-  .navlinks {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navlinks li {
-    text-decoration: none;
-  }
-  
-  .navlinks li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .navlinks li a:hover {
-    color: #f39c12;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1c1c1c;
+  padding: 1rem 2rem;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff4c4c;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+  color: #ff4c4c;
+}
