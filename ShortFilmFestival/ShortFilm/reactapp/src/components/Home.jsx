@@ -3,15 +3,19 @@ import './Home.css';
 
 const Home = () => {
   return (
-    <div className="home_container">
-      <h2>Welcome to Fresh Groceries!</h2>
+    <div
+      className="home-container"
+      style={{ backgroundImage: `url(/images/paper-7859025_1280.jpg)` }}
+    >
+      <h2>Welcome to the Short Film Festival!</h2>
       <div className="shop_info">
-          <h3>Our store is located at:</h3>
-          <p>1234 Grocery Store Lane</p>
-          <p>Grocery, ST 12345</p>
+        <h3>Location:</h3>
+        <p>Film Avenue, Cine City</p>
+        <p>Lights, Camera, Action - 2025</p>
       </div>
     </div>
   );
 };
+
 
 export default Home;
