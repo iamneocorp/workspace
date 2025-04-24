@@ -1,14 +1,20 @@
+// __tests__/App.test.js
+
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import App from '../App';
-import Home from '../components/Home';
-import Footer from '../components/Footer';
 import AddFilm from '../components/AddFilm';
 import DisplayFilm from '../components/DisplayFilm';
 
+// Utility to render components with router context
+const renderWithRouter = (ui) => {
+  return render(<BrowserRouter>{ui}</BrowserRouter>);
+};
+
 describe('App Component and Routing', () => {
   test('renders App with header navigation links', () => {
-    render(<App />);
+    renderWithRouter(<App />);
 
     const homeLink = screen.getByText(/Home/i);
     const addFilmLink = screen.getByText(/Add Film/i);
@@ -20,22 +26,22 @@ describe('App Component and Routing', () => {
   });
 
   test('navigates to Add Film component on click', () => {
-    render(<App />);
+    renderWithRouter(<App />);
 
     const addFilmLink = screen.getByText(/Add Film/i);
     fireEvent.click(addFilmLink);
 
-    const formHeading = screen.getByText(//i);
+    const formHeading = screen.getByText(/Add Film Details/i);
     expect(formHeading).toBeInTheDocument();
   });
 
   test('navigates to Display Films component on click', () => {
-    render(<App />);
+    renderWithRouter(<App />);
 
     const displayFilmLink = screen.getByText(/Display Films/i);
     fireEvent.click(displayFilmLink);
 
-    const tableHeading = screen.getByText(/Short Films at the Festival/i);
+    const tableHeading = screen.getByRole('heading', { name: /Short Films at the Festival/i });
     expect(tableHeading).toBeInTheDocument();
   });
 });
@@ -61,6 +67,10 @@ describe('AddFilm Component', () => {
 });
 
 describe('DisplayFilm Component', () => {
+  beforeEach(() => {
+    jest.restoreAllMocks(); // Cleanup any previous mocks
+  });
+
   test('fetches and displays films on mount', async () => {
     const mockFilms = [
       {
@@ -113,9 +123,7 @@ describe('DisplayFilm Component', () => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      } 
     );
-
-    global.fetch.mockRestore();
   });
 });
